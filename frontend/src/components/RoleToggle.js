@@ -123,9 +123,9 @@ export default function Pricing() {
 
   return (
     <React.Fragment>
-    <div style ={ { height: "100vh", backgroundImage: "url('https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/02/15/Photos/Processed/healthcareworkers-kfMD--621x414@LiveMint.jpg')",
+    <div style ={ { height: "100vh", backgroundImage: "url('https://images-ext-1.discordapp.net/external/1NKV3pjmMOXP6AGF6UWy0TF8DaXfo2sHYNl7u82fLH4/https/www.newsclick.in/sites/default/files/2017-08/thumb_5.jpg?width=1220&height=678')",
     backgroundPosition: 'top',
-    backgroundSize: '80% 100%',
+    backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     // opacity: 0.5,
     zIndex:"-1",
@@ -148,7 +148,7 @@ export default function Pricing() {
       </AppBar>
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{fontSize:"10vh"}}>
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{fontSize:"10vh",color:"white"}}>
           Sakhi
         </Typography>
         {/* <Typography variant="h5" align="center" color="textSecondary" component="p">
@@ -181,7 +181,7 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                  <Button fullWidth variant={tier.buttonVariant} color="primary" onClick={() => {  window.location.replace("/login"); }} >
                     {tier.buttonText}
                   </Button>
                 </CardActions>
