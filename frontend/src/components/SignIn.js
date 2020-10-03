@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import RadioButtonsGroup from './RadioButtonsGroup';
-import { Link as Linker } from 'react-router-dom';
+import { Link as Linker, Redirect } from 'react-router-dom';
 import Dashboard from './Dashboard';
 
 function Copyright() {
@@ -49,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function handleSubmit(event) {
+  event.preventDefault();
+  window.location.replace("/dashboard");
+}
+
 export default function SignIn() {
   const classes = useStyles();
 
@@ -62,7 +67,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -88,19 +93,17 @@ export default function SignIn() {
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          /><br/>
-          <RadioButtonsGroup/>
-          <Link to='/dashboard'>
+          /><br />
+          <RadioButtonsGroup />
           <Button
-            // type="submit"
+            type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Login
           </Button>
-          </Link>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
