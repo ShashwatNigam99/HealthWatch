@@ -135,7 +135,7 @@ export default function Pricing() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Sakhi-Healthcare Tracker
+            HealthWatch-Healthcare Tracker
           </Typography>
           <nav>
             <Link variant="button" color="textPrimary" href="#" className={classes.link}>
@@ -150,7 +150,7 @@ export default function Pricing() {
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Sakhi
+          HealthWatch
         </Typography>
         {/* <Typography variant="h5" align="center" color="textSecondary" component="p">
           Quickly build an effective pricing table for your potential customers with this layout.
