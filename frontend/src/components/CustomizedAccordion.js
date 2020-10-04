@@ -6,6 +6,10 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import clsx from "clsx";
 
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
 import MuiAccordion from "@material-ui/core/Accordion";
 import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import MuiAccordionDetails from "@material-ui/core/AccordionDetails";
@@ -60,7 +64,20 @@ const AccordionDetails = withStyles((theme) => ({
   },
 }))(MuiAccordionDetails);
 
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    paddingBottom: theme.spacing(2),
+    paddingRight: theme.spacing(7),
+    // paddingTop: theme.spacing(2),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(3),
+  },
+}));
+
 export default function CustomizedAccordions() {
+  const classes = useStyles();
   const [expanded, setExpanded] = React.useState("panel1");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -127,7 +144,22 @@ export default function CustomizedAccordions() {
         </AccordionDetails>
         <Divider />
         <AccordionActions>
-          <Button size="small" color="success">
+          <FormControl className={classes.formControl}>
+            <InputLabel id="category-label">Category</InputLabel>
+            <Select labelId="category-label" required label="Category">
+              <MenuItem value={"Ortho"}>Ortho</MenuItem>
+              <MenuItem value={"Nervous-Stroke"}>Nervous and Stroke</MenuItem>
+              <MenuItem value={"Urology"}>Urology</MenuItem>
+              <MenuItem value={"Respiratory"}>Respiratory</MenuItem>
+              <MenuItem value={"Circulatory"}>Circulatory</MenuItem>
+              <MenuItem value={"Paediatric"}>Paediatric</MenuItem>
+              <MenuItem value={"Gynae"}>Gynae</MenuItem>
+              <MenuItem value={"Infectious"}>Infectious</MenuItem>
+              <MenuItem value={"ENT"}>ENT</MenuItem>
+              <MenuItem value={"Eye"}>Eye</MenuItem>
+            </Select>
+          </FormControl>
+          <Button variant="contained" size="small" color="primary">
             Mark as Complete
           </Button>
         </AccordionActions>
@@ -190,7 +222,22 @@ export default function CustomizedAccordions() {
         </AccordionDetails>
         <Divider />
         <AccordionActions>
-          <Button size="small" color="success">
+          <FormControl className={classes.formControl}>
+            <InputLabel id="category-label">Category</InputLabel>
+            <Select labelId="category-label" required label="Category">
+              <MenuItem value={"Ortho"}>Ortho</MenuItem>
+              <MenuItem value={"Nervous-Stroke"}>Nervous and Stroke</MenuItem>
+              <MenuItem value={"Urology"}>Urology</MenuItem>
+              <MenuItem value={"Respiratory"}>Respiratory</MenuItem>
+              <MenuItem value={"Circulatory"}>Circulatory</MenuItem>
+              <MenuItem value={"Paediatric"}>Paediatric</MenuItem>
+              <MenuItem value={"Gynae"}>Gynae</MenuItem>
+              <MenuItem value={"Infectious"}>Infectious</MenuItem>
+              <MenuItem value={"ENT"}>ENT</MenuItem>
+              <MenuItem value={"Eye"}>Eye</MenuItem>
+            </Select>
+          </FormControl>
+          <Button variant="contained" size="small" color="primary">
             Mark as Complete
           </Button>
         </AccordionActions>

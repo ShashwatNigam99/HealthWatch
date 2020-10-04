@@ -6,13 +6,14 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
+import SortIcon from "@material-ui/icons/Sort";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import CustomizedAccordions from "./CustomizedAccordion";
+import { Button, Grid } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  button: {
+    margin: theme.spacing(1),
+  },
 }));
 
 export default function List() {
@@ -83,16 +87,36 @@ export default function List() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
+        <Grid container justify="flex-end">
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            startIcon={<SortIcon />}
+            justify="flex-end"
+          >
+            Sort by Risk
+          </Button>
+        </Grid>
         <CustomizedAccordions></CustomizedAccordions>
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <Grid container justify="flex-end">
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            startIcon={<SortIcon />}
+            justify="flex-end"
+          >
+            Sort by Risk
+          </Button>
+        </Grid>
         <CustomizedAccordions></CustomizedAccordions>
       </TabPanel>
     </div>
   );
 }
-
-
 
 // Using a table like a list is an option
 
