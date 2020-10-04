@@ -70,14 +70,14 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     },
-  backGround: {
-    backgroundColor:
-    theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
-    backgroundImage: "https://www.qries.com/images/banner_logo.png", 
-    backgroundPosition: 'top',
-    backgroundSize: '100% 100%',
-    backgroundRepeat: 'no-repeat'
-    },
+  // backGround: {
+  //   backgroundColor:
+  //   theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+  //   backgroundImage: "https://www.qries.com/images/banner_logo.png", 
+  //   backgroundPosition: 'top',
+  //   backgroundSize: '100% 100%',
+  //   backgroundRepeat: 'no-repeat'
+  //   },
   },
 }));
 
@@ -123,14 +123,14 @@ export default function Pricing() {
 
   return (
     <React.Fragment>
-    <div style ={ { height: "100vh", backgroundImage: "url('https://images-ext-1.discordapp.net/external/1NKV3pjmMOXP6AGF6UWy0TF8DaXfo2sHYNl7u82fLH4/https/www.newsclick.in/sites/default/files/2017-08/thumb_5.jpg?width=1220&height=678')",
+    {/* <div style ={ { height: "100vh", backgroundImage: "url('https://images-ext-1.discordapp.net/external/1NKV3pjmMOXP6AGF6UWy0TF8DaXfo2sHYNl7u82fLH4/https/www.newsclick.in/sites/default/files/2017-08/thumb_5.jpg?width=1220&height=678')",
     backgroundPosition: 'top',
     backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     // opacity: 0.5,
     zIndex:"-1",
-    } }>
-    {/* </div> */}
+    } }> */}
+    <div>
       <CssBaseline />
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
@@ -149,7 +149,7 @@ export default function Pricing() {
       </AppBar>
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom style={{fontSize:"10vh",color:"white"}}>
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
           Sakhi
         </Typography>
         {/* <Typography variant="h5" align="center" color="textSecondary" component="p">

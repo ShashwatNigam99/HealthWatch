@@ -20,8 +20,14 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
+import Genchart from './Genchart';
 import Orders from './Orders';
+import { Alert } from '@material-ui/lab';
+import Title from './Title';
+import AgePiechart from './AgePiechart';
+import GenPiechart from './RespPiechart';
+import RespPiechart from './RespPiechart';
+import Response from './Response';
 
 function Copyright() {
   return (
@@ -113,20 +119,178 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    height: 500,
   },
 }));
+
+function Emergency() {
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  return (
+    <main className={classes.content}>
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={3}>
+          {/* Chart */}
+          <Grid item xs={12} md={7} lg={7}>
+            <Paper className={fixedHeightPaper}>
+              <Chart />
+            </Paper>
+          </Grid>
+          {/* Recent Deposits */}
+          <Grid item xs={12} md={5} lg={5}>
+            <Paper className={fixedHeightPaper}>
+            <Title>Emergency cases (Age wise) </Title>
+              <Typography component="p" variant="h5">
+                Total cases today: 79
+              </Typography>
+              <AgePiechart/>
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
+      </Container>
+    </main>
+  )
+}
+
+function General() {
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  return (
+    <main className={classes.content}>
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={2}>
+          {/* Chart */}
+          <Grid item xs={12} md={7} lg={7}>
+            <Paper className={fixedHeightPaper}>
+              <Genchart/>
+            </Paper>
+          </Grid>
+          {/* Recent Deposits */}
+          <Grid item xs={12} md={5} lg={5}>
+            <Paper className={fixedHeightPaper}>
+            <Title>General cases (Age wise) </Title>
+              <Typography component="p" variant="h5">
+                Total cases today: 4545
+              </Typography>
+              <GenPiechart/>
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
+      </Container>
+    </main>
+  )
+}
+
+function Main() {
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  return (
+    <main className={classes.content}>
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={2}>
+          {/* Chart */}
+          <Grid item xs={12} md={7} lg={7}>
+            <Paper className={fixedHeightPaper}>
+              <Genchart/>
+            </Paper>
+          </Grid>
+          {/* Recent Deposits */}
+          <Grid item xs={12} md={5} lg={5}>
+            <Paper className={fixedHeightPaper}>
+            <Title>General cases (Age wise) </Title>
+              <Typography component="p" variant="h5">
+                Total cases today: 4545
+              </Typography>
+              <GenPiechart/>
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
+      </Container>
+    </main>
+  )
+}
+
+function Resp() {
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  return (
+    <main className={classes.content}>
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={2}>
+          {/* Chart */}
+          <Grid item xs={12} md={7} lg={7}>
+            <Paper className={fixedHeightPaper}>
+              <Response/>
+            </Paper>
+          </Grid>
+          {/* Recent Deposits */}
+          <Grid item xs={12} md={5} lg={5}>
+            <Paper className={fixedHeightPaper}>
+            <Title>General cases (Age wise) </Title>
+              <Typography component="p" variant="h5">
+                Total cases today: 4545
+              </Typography>
+              <GenPiechart/>
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
+      </Container>
+    </main>
+  )
+}
+
 
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+  const [count, setCounter] = React.useState(0);
+
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const handleClick = () => {
+    console.log(count);
+    setCounter((count+1)%5);
+
+  };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  let comp;
+  if(count==0){
+    comp = <Emergency/>;
+  }
+  else if(count==1){
+    comp = <Emergency/>;
+  } 
+  else if(count==2){
+    comp = <General/>;
+  } 
+  else if(count==3){
+    comp = <Resp/>;
+  } 
+  else{
+    comp = <Emergency/>;
+  } 
+
 
   return (
     <div className={classes.root}>
@@ -165,38 +329,9 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
+        <List onClick={handleClick}>{mainListItems}</List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
-              </Paper>
-            </Grid>
-          </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
-        </Container>
-      </main>
+      {comp}
     </div>
   );
 }
