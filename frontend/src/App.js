@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SignIn from './components/SignIn';
+import Dashboard from './components/Dashboard';
+import List from './components/List';
+import RoleToggle from './components/RoleToggle';
+import Checkout from './components/Checkout';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. bla
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Router>
+                <Switch>
+                    <Route exact path='/login' component={SignIn} />
+                    <Route exact path='/dashboard' component={Dashboard} />
+                    <Route exact path='/list' component={List} />
+                    <Route exact path='/home' component={RoleToggle} />
+                    <Route exact path='/add' component={Checkout} />
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
