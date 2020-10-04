@@ -55,6 +55,6 @@ And that is how we intend to use inexpensive, highly scalable, low tech solution
 - Application containerization: Used docker! 
 - Pitching: Attended great sessions at IvyHacks to learn more about pitching ideas and innovations.
 
-### [Link to presentation](https://docs.google.com/presentation/d/1ZWQ2VrpXHHMIWX1cGt8kGqUCdBO6T3JQjuR2Iar6AFc/edit?usp=sharing)
+### [Link to presentation](https://docs.google.com/presentation/d/1J_xAcRRshGJnmV2X0S2Dr7C4N_WHt2UhTuc8BGm2SDA/edit?usp=sharing)
 
 
