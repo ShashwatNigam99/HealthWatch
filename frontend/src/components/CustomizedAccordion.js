@@ -14,6 +14,10 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
+import { Grid } from "@material-ui/core";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const Accordion = withStyles({
   root: {
@@ -71,16 +75,62 @@ export default function CustomizedAccordions() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
+          <Typography>Kishan Kumar Das</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+            <List>
+              <ListItem>
+                <ListItemText>
+                  <Grid container fullWidth spacing={2}>
+                    <Grid item xs={6} sm={6}>
+                      Age
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      68
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Gender
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Male
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Aadhar
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      6516 8616 5865
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Co-morbidities
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Diabetes, Hypertension
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Mobile
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      9984656325
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Address
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      15, Tilak Road, Chanda Nagar, Lucknow
+                    </Grid>
+                  </Grid>
+                </ListItemText>
+              </ListItem>
+            </List>
           </Typography>
         </AccordionDetails>
+        <Divider />
+        <AccordionActions>
+          <Button size="small" color="success">
+            Mark as Complete
+          </Button>
+        </AccordionActions>
       </Accordion>
       <Accordion
         square
@@ -88,39 +138,62 @@ export default function CustomizedAccordions() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Collapsible Group Item #2</Typography>
+          <Typography>Lakshmi Sharma</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+            <List>
+              <ListItem>
+                <ListItemText>
+                  <Grid container fullWidth spacing={2}>
+                    <Grid item xs={6} sm={6}>
+                      Age
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      55
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Gender
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Female
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Aadhar
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      6568 6846 6515
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Co-morbidities
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Hypertension
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Mobile
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      6816516846
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      Address
+                    </Grid>
+                    <Grid item xs={6} sm={6}>
+                      72, Narahi Road, Alambagh, Lucknow
+                    </Grid>
+                  </Grid>
+                </ListItemText>
+              </ListItem>
+            </List>
           </Typography>
         </AccordionDetails>
         <Divider />
         <AccordionActions>
           <Button size="small" color="success">
-            Complete
+            Mark as Complete
           </Button>
         </AccordionActions>
-      </Accordion>
-      <Accordion
-        square
-        expanded={expanded === "panel3"}
-        onChange={handleChange("panel3")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
       </Accordion>
     </div>
   );

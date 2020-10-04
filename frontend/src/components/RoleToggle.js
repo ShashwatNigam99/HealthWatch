@@ -130,6 +130,7 @@ export default function Pricing() {
     // opacity: 0.5,
     zIndex:"-1",
     } }>
+    {/* </div> */}
       <CssBaseline />
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>

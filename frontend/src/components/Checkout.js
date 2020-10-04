@@ -10,9 +10,10 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import AddressForm from "./AddressForm";
-import PaymentForm from "./PaymentForm";
+import GroupCommonForm from "./GroupCommonForm";
+import MemberForms from "./MemberForms";
 import Review from "./Review";
+import { Redirect } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -64,14 +65,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ["Shipping address", "Payment details", "Review your order"];
+const steps = ["Group information", "Add group members", "Review group"];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <GroupCommonForm />;
     case 1:
-      return <PaymentForm />;
+      return <MemberForms />;
     case 2:
       return <Review />;
     default:
@@ -82,6 +83,14 @@ function getStepContent(step) {
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleRestart = () => {
+    window.location.replace("/add");
+  };
+
+  const handleHome = () => {
+    window.location.replace("/");
+  };
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -97,14 +106,14 @@ export default function Checkout() {
       <AppBar position="absolute" color="default" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+            Sakhi
           </Typography>
         </Toolbar>
       </AppBar>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            New Group
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((label) => (
@@ -116,14 +125,27 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
-                </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
+                  Group has been added.
                 </Typography>
+                <div className={classes.buttons}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleHome}
+                    className={classes.button}
+                  >
+                    Home
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleRestart}
+                    className={classes.button}
+                  >
+                    Add Group
+                  </Button>
+                </div>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -140,7 +162,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? "Place order" : "Next"}
+                    {activeStep === steps.length - 1 ? "Save group" : "Next"}
                   </Button>
                 </div>
               </React.Fragment>

@@ -83,69 +83,10 @@ export default function List() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        {/* {<div class={classes.accordion}>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>
-                Emergency Case 1
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Emergency Case 1 Details</Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>
-                Emergency Case 2
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Emergency Case 2 Details</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>} */}
         <CustomizedAccordions></CustomizedAccordions>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div class={classes.accordion}>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>
-                General Visit Case 1
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Emergency Case 1 Details</Typography>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>
-                General Visit Case 2
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Emergency Case 2 Details</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>
+        <CustomizedAccordions></CustomizedAccordions>
       </TabPanel>
     </div>
   );

@@ -5,33 +5,13 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export default function AddressForm() {
+export default function GroupCommonForm() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Group details
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="mobileNumber"
-            name="mobileNumber"
-            label="Mobile number"
-            fullWidth
-            autoComplete="mobile-number"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-          />
-        </Grid>
         <Grid item xs={12}>
           <TextField
             required
@@ -62,19 +42,14 @@ export default function AddressForm() {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            fullWidth
-          />
+          <TextField required id="state" name="state" label="State" fullWidth />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
             id="zip"
             name="zip"
-            label="Zip / Postal code"
+            label="Zip code"
             fullWidth
             autoComplete="shipping postal-code"
           />
@@ -82,19 +57,12 @@ export default function AddressForm() {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="country"
-            name="country"
-            label="Country"
+            type="number"
+            id="mobileNumber"
+            name="mobileNumber"
+            label="Mobile number"
             fullWidth
-            autoComplete="shipping country"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox color="secondary" name="saveAddress" value="yes" />
-            }
-            label="Use this address for payment details"
+            autoComplete="mobile-number"
           />
         </Grid>
       </Grid>
