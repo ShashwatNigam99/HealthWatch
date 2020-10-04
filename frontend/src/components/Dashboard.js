@@ -25,9 +25,30 @@ import Orders from './Orders';
 import { Alert } from '@material-ui/lab';
 import Title from './Title';
 import AgePiechart from './AgePiechart';
-import GenPiechart from './RespPiechart';
+import GenPiechart from './GenPiechart';
 import RespPiechart from './RespPiechart';
 import Response from './Response';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import Chip from "@material-ui/core/Chip";
+import MenuItem from "@material-ui/core/MenuItem";
+import Input from "@material-ui/core/Input";
+
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     formControl: {
+//       margin: theme.spacing(1),
+//       minWidth: 120,
+//     },
+//     selectEmpty: {
+//       marginTop: theme.spacing(2),
+//     },
+//   }),
+// );
+
 
 function Copyright() {
   return (
@@ -42,6 +63,44 @@ function Copyright() {
   );
 }
 
+// function NativeSelects() {
+//   const classes = useStyles();
+//   const [state, setState] = React.useState<{ age: string | number; name: string }>({
+//     age: '',
+//     name: 'hai',
+//   });
+
+//   const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+//     const name = event.target.name as keyof typeof state;
+//     setState({
+//       ...state,
+//       [name]: event.target.value,
+//     });
+//   };
+
+//   return (
+//     <div>
+//       <FormControl className={classes.formControl}>
+//         <InputLabel htmlFor="age-native-helper">Age</InputLabel>
+//         <NativeSelect
+//           value={state.age}
+//           onChange={handleChange}
+//           inputProps={{
+//             name: 'age',
+//             id: 'age-native-helper',
+//           }}
+//         >
+//           <option aria-label="None" value="" />
+//           <option value={10}>Ten</option>
+//           <option value={20}>Twenty</option>
+//           <option value={30}>Thirty</option>
+//         </NativeSelect>
+//         <FormHelperText>Some important helper text</FormHelperText>
+//       </FormControl>
+
+//     </div>
+//   );
+// }
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -158,6 +217,7 @@ function Emergency() {
 
 function General() {
   const classes = useStyles();
+
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   return (
     <main className={classes.content}>
@@ -241,9 +301,9 @@ function Resp() {
             <Paper className={fixedHeightPaper}>
             <Title>General cases (Age wise) </Title>
               <Typography component="p" variant="h5">
-                Total cases today: 4545
+              Unaddressed cases today: 267
               </Typography>
-              <GenPiechart/>
+              <RespPiechart/>
             </Paper>
           </Grid>
         </Grid>
@@ -260,7 +320,6 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [count, setCounter] = React.useState(0);
-
 
   const handleDrawerOpen = () => {
     setOpen(true);

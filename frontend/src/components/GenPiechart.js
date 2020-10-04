@@ -2,15 +2,15 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-class RespPiechart extends React.Component {
+class GenPiechart extends React.Component {
   render() {
     return (
       <Plot
         data={[
           {
-            values: [267, 1127],
+            values: [720, 1247, 1028, 1550],
 
-            labels: ['Unaddressed', 'Addressed'],
+            labels: ['Children', 'Adult-Women', 'Adult-Men', 'Elderly'],
     
             type: 'pie'
           },
@@ -21,11 +21,11 @@ class RespPiechart extends React.Component {
 
             width: 475,
     
-            title: "Addressed vs Unaddressed (daily)"
+            title: "Age Based Analysis"
         } }
       />
     );
   }
 }
 
-export default RespPiechart;
+export default GenPiechart;

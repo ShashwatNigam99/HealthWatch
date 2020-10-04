@@ -106,7 +106,7 @@ export default function Checkout() {
       <AppBar position="absolute" color="default" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Sakhi
+            HealthWatch
           </Typography>
         </Toolbar>
       </AppBar>
